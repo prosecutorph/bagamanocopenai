@@ -22,6 +22,9 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/', async (req, res) => {
+  // Log the question received from the front end
+  console.log(`Received question: ${req.body.prompt}`);
+
   try {
     const prompt = req.body.prompt;
 
