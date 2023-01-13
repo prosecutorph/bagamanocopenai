@@ -49,7 +49,7 @@ function chatStripe(isAi, value, uniqueId) {
         `
         <div class="wrapper ${isAi && 'ai'}">
             <div class="chat">
-// removed code 
+
 
 
 
