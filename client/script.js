@@ -124,10 +124,7 @@ form.addEventListener('keyup', (e) => {
     }
 })
 
-// This code first selects the message element using the getElementsByClassName method and assigns it to the message variable. Then it selects the copyBtn element and attaches a click event listener to it, where it uses the navigator.clipboard.writeText() method to copy the text content of the message element to the clipboard.
-// It will work if the DOM is already loaded and the elements with the specified class names exist in the HTML document before the JavaScript is executed.
-// You can also use innerText property instead of textContent to get the text content of the element.
-
+// This code use newest function of copying text and don't work on older browser. I use wrapper that's why i change this code
 // function copyText(event) {
 //    const messageEl = event.target.parentNode.nextElementSibling;
 //    const textToCopy = messageEl.textContent;
