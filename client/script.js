@@ -79,6 +79,9 @@ const handleSubmit = async (e) => {
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
 
+    const copyBtns = document.querySelectorAll('.copy-btn');
+    copyBtns.forEach(btn => btn.addEventListener('click', copyText))
+    
     // to focus scroll to the bottom 
     chatContainer.scrollTop = chatContainer.scrollHeight;
 
@@ -125,23 +128,11 @@ form.addEventListener('keyup', (e) => {
 // It will work if the DOM is already loaded and the elements with the specified class names exist in the HTML document before the JavaScript is executed.
 // You can also use innerText property instead of textContent to get the text content of the element.
 
-const copyBtns = document.querySelectorAll('.copy-btn');
 function copyText(event) {
-    const messageEl = event.target.previousElementSibling;
+    const messageEl = event.target.parentNode.nextElementSibling;
     const textToCopy = messageEl.textContent;
 
     navigator.clipboard.writeText(textToCopy);
 }
-copyBtns.forEach(btn => btn.addEventListener('click', copyText))
-
-
-// const wrapper = document.querySelector(".wrapper.ai")
-// const copyBtn = wrapper.getElementsByClassName("copy-btn")[0]
-// copyBtn.addEventListener("click", copyText);
-
-const wrapper = document.getElementsByClassName("wrapper ai")
-const copyBtn = wrapper[wrapper.length-1].getElementsByClassName("copy-btn")[0]
-copyBtn.addEventListener('click', copyText)
-
 
 
