@@ -128,11 +128,22 @@ form.addEventListener('keyup', (e) => {
 // It will work if the DOM is already loaded and the elements with the specified class names exist in the HTML document before the JavaScript is executed.
 // You can also use innerText property instead of textContent to get the text content of the element.
 
+// function copyText(event) {
+//    const messageEl = event.target.parentNode.nextElementSibling;
+//    const textToCopy = messageEl.textContent;
+
+//    navigator.clipboard.writeText(textToCopy);
+//}
+
 function copyText(event) {
     const messageEl = event.target.parentNode.nextElementSibling;
     const textToCopy = messageEl.textContent;
 
-    navigator.clipboard.writeText(textToCopy);
+    const textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
 }
-
 
