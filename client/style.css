@@ -51,8 +51,6 @@ body {
     border: none;
     cursor: pointer;
     margin-left: 8px;
-	justify-content: flex-end;
-
 }
 
 .copy-btn:hover {
@@ -73,7 +71,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-
+  justify-content: flex-end;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
