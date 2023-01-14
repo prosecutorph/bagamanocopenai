@@ -129,10 +129,12 @@ const message = document.getElementsByClassName("message")[0];
 const copyBtn = document.getElementsByClassName("copy-btn")[0];
 
 copyBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText(message.textContent).then(() => {
-    console.log('Text copied to clipboard');
-  }, (err) => {
-    console.error('Failed to copy text: ', err);
-  });
+  setTimeout(() => {
+    navigator.clipboard.writeText(message.textContent).then(() => {
+      console.log('Text copied to clipboard');
+    }, (err) => {
+      console.error('Failed to copy text: ', err);
+    });
+  }, 9000);
 });
 
