@@ -6,10 +6,6 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
 
-// Event Handler for Copy Button
-const wrapper = document.getElementsByClassName("wrapper ai")
-const copyBtn = wrapper[wrapper.length-1].getElementsByClassName("copy-btn")[0]
-copyBtn.addEventListener('click', copyText)
 
 function loader(element) {
     element.textContent = ''
@@ -124,3 +120,8 @@ form.addEventListener('keyup', (e) => {
         handleSubmit(e)
     }
 })
+
+// Event Handler for Copy Button
+const wrapper = document.getElementsByClassName("wrapper ai")
+const copyBtn = wrapper[wrapper.length-1].getElementsByClassName("copy-btn")[0]
+copyBtn.addEventListener('click', copyText)
