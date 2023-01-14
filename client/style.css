@@ -69,7 +69,7 @@ body {
 
 .chat {
   width: 100%;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   justify-content: flex-end;
   display: flex;
@@ -128,7 +128,7 @@ body {
 
 form {
   width: 100%;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 7px;
   padding: 10px;
   background: #40414F;
