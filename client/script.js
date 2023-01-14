@@ -121,7 +121,18 @@ form.addEventListener('keyup', (e) => {
     }
 })
 
-// Event Handler for Copy Button
-const wrapper = document.getElementsByClassName("wrapper ai")
-const copyBtn = wrapper[wrapper.length-1].getElementsByClassName("copy-btn")[0]
-copyBtn.addEventListener('click', copyText)
+// This code first selects the message element using the getElementsByClassName method and assigns it to the message variable. Then it selects the copyBtn element and attaches a click event listener to it, where it uses the navigator.clipboard.writeText() method to copy the text content of the message element to the clipboard.
+// It will work if the DOM is already loaded and the elements with the specified class names exist in the HTML document before the JavaScript is executed.
+// You can also use innerText property instead of textContent to get the text content of the element.
+
+const message = document.getElementsByClassName("message")[0];
+const copyBtn = document.getElementsByClassName("copy-btn")[0];
+
+copyBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(message.textContent).then(() => {
+    console.log('Text copied to clipboard');
+  }, (err) => {
+    console.error('Failed to copy text: ', err);
+  });
+});
+
