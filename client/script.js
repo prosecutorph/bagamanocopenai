@@ -6,6 +6,7 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
 
+// This will make a request the server when the page loads you can check the browser's developer console for the response.
 window.onload = function(){
     fetch('https://openai-javascript.onrender.com/warmup')
       .then(response => console.log(response))
