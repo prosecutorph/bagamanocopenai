@@ -125,6 +125,18 @@ form.addEventListener('keyup', (e) => {
 // It will work if the DOM is already loaded and the elements with the specified class names exist in the HTML document before the JavaScript is executed.
 // You can also use innerText property instead of textContent to get the text content of the element.
 
+const copyBtns = document.querySelectorAll('.copy-btn');
+
+function copyText(event) {
+    const messageEl = event.target.previousElementSibling;
+    const textToCopy = messageEl.textContent;
+
+    navigator.clipboard.writeText(textToCopy);
+}
+
+copyBtns.forEach(btn => btn.addEventListener('click', copyText))
+
+
 const wrapper = document.querySelector(".wrapper.ai")
 const copyBtn = wrapper.getElementsByClassName("copy-btn")[0]
 copyBtn.addEventListener("click", copyText);
