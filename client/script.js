@@ -4,6 +4,9 @@ import user from './assets/user.svg'
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
+const data = new FormData(form)
+const prompt = `${data.get('prompt')}`
+
 let loadInterval
 
 // This will make a request the server when the page loads you can check the browser's developer console for the response.
@@ -76,7 +79,7 @@ const handleSubmit = async (e) => {
     const data = new FormData(form)
 
     // user's chatstripe
-    chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
+    chatContainer.innerHTML += chatStripe(false, prompt)
 
     // to clear the textarea input 
     form.reset()
@@ -103,7 +106,7 @@ const handleSubmit = async (e) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            prompt: data.get('prompt')
+            prompt: prompt
         })
     })
 
