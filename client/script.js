@@ -6,6 +6,11 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
 
+window.onload = function(){
+    fetch('https://openai-javascript.onrender.com/warmup')
+      .then(response => console.log(response))
+      .catch(error => console.error(error))
+  }
 
 function loader(element) {
     element.textContent = ''
