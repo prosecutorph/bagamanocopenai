@@ -25,6 +25,7 @@ app.get('/', async (req, res) => {
 app.get('/warmup', async (req, res) => {
   res.status(200).send({
     message: 'Server is awake'
+    console.log('Someone Send a Signal!'))
   })
 })
 
