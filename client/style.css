@@ -41,6 +41,24 @@ body {
   display: none;
 }
 
+/* For copy button */
+.copy-btn {
+    font-size: 14px;
+    padding: 5px 8px;
+    background-color: #10a37f;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+	justify-content: flex-end;
+
+}
+
+.copy-btn:hover {
+    background-color: #0f7f5a;
+}
+
 .wrapper {
   width: 100%;
   padding: 15px;
@@ -86,7 +104,7 @@ body {
 
 .message {
   flex: 1;
-
+  min-height: 25px; /* fix the 3 dots resize */	
   color: #dcdcdc;
   font-size: 12px;
 
