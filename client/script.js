@@ -4,9 +4,6 @@ import user from './assets/user.svg'
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
-const data = new FormData(form)
-const prompt = `${data.get('prompt')}`
-
 let loadInterval
 
 // This will make a request the server when the page loads you can check the browser's developer console for the response.
@@ -76,7 +73,10 @@ function chatStripe(isAi, value, uniqueId) {
 const handleSubmit = async (e) => {
     e.preventDefault()
 
+    // user's chatstripe fix the multiline and special char
     const data = new FormData(form)
+    const prompt = `${data.get('prompt')}`
+    chatContainer.innerHTML += chatStripe(false, prompt)
 
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, prompt)
