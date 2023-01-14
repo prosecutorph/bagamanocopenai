@@ -21,6 +21,13 @@ app.get('/', async (req, res) => {
   })
 })
 
+// To make the server warmup when the client enter the website.
+app.get('/warmup', async (req, res) => {
+  res.status(200).send({
+    message: 'Server is awake'
+  })
+})
+
 app.post('/', async (req, res) => {
   // Log the question received from the front end
   console.log(`Received question: ${req.body.prompt}`);
