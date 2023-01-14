@@ -73,10 +73,9 @@ function chatStripe(isAi, value, uniqueId) {
 const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // user's chatstripe fix the multiline and special char
+    // fix the multiline and special char
     const data = new FormData(form)
     const prompt = `${data.get('prompt')}`
-    chatContainer.innerHTML += chatStripe(false, prompt)
 
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, prompt)
